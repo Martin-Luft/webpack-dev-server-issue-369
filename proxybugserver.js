@@ -2,6 +2,7 @@ var http = require("http");
 
 http.createServer(function (request, response) {
   console.log('incoming request');
+  request.setTimeout(190000); // just needs to more than the setTimeout() below
   setTimeout(function() {waitAndResponse(response)}, 180000);
 }).listen(8081);
 
